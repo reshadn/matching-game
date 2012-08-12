@@ -16,13 +16,23 @@ div span {
 display:none;
 }
 
+.matched img {
+border: dotted blue;
+background-color: green;
+display:inline;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+opacity:.9;
+}
+
 .card {
 margin: 10px;
 border: solid black;
 background:url(http://cdn2.hark.com/images/000/006/667/6667/original.0);
 background-size:100% 100%;
 background-repeat:no-repeat;
-opacity: .70;
+opacity: .60;
 width:200px;
 height:300px;
 float: left;
@@ -42,16 +52,6 @@ opacity:1;
 
 .cardFace img{
 display:inline;
-}
-
-.matched img {
-border: dotted blue;
-background-color: green;
-display:inline;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-opacity:1;
 }
 
 .footer {
