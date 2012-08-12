@@ -3,7 +3,7 @@ $(document).ready(function() {
 var firstCard = 0; 
 var secondCard = 0;
 var matched = 0;
-  
+
 $(".card").click( function () {
   // check if card is already matched 
   if($(this).hasClass("matched")){
@@ -25,8 +25,10 @@ $(".card").click( function () {
   
 // check if cards match  
   if(firstCard !== 0 && secondCard !== 0){
-   checkMatch(); 
-    
+    checkMatch(); 
+    //reset card value
+    firstCard = 0;
+    secondCard = 0;
   } 
 }
 });  
@@ -34,19 +36,13 @@ $(".card").click( function () {
 var checkMatch = function(){
 //cards match
     if(firstCard === secondCard){
-      //reset cards
-      firstCard = 0;
-      secondCard = 0;
+      // cards match
       matched++;
       checkWin();
       // set as matched cards
-      $(".selected").toggleClass("matched cardFace selected");             
+      $(".selected").toggleClass("matched cardFace selected");
     } else if(firstCard !== secondCard){
-      
       // cards don't match
-      // reset cards
-      firstCard = 0;
-      secondCard = 0;
       //reset selected card view
       $(".selected").animate({
         borderWidth: "3px"
@@ -76,6 +72,10 @@ var checkWin = function(){
     matched = 0;
   };
   
+//  var easyGame = function(){
+//    $(".card").hide();
+//  }; 
+ 
   // New Game handler
   $("#newGame").click(function () {
     newGame();
@@ -85,5 +85,9 @@ var checkWin = function(){
   $("#hintShowAll").click(function () {
     hintShowAll();
   });
+
+//  $("#easyGame").click(function () {
+//    easyGame();
+//  };
     
 }); //end doc.ready
