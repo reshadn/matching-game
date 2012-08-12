@@ -46,7 +46,7 @@ $(".card").click( function () {
       //reset selected card view
       $(".selected").animate({
         borderWidth: "3px"
-      }, 1500, function (){
+      }, 2000, function (){
         $(".selected").toggleClass("cardFace selected");
       });
     }
