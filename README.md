@@ -11,7 +11,5 @@ As a weekend project I built this matching game using jQuery and Bootstrap. Over
 ### Inspired by...
 *I built this game with my 2 little nephews in mind. They love the Lion King and they love playing on the ipad. I hope they enjoy playing this game.*
 
-*Acknowledgements*
-*jQuery, jQuery UI*
-*Twitter Bootstrap*
-*Various Google images of "The Lion King"(&copy;Disney)*
+**Acknowledgements**
+*jQuery, jQuery UI, Twitter Bootstrap, Various Google images of "The Lion King"(&copy;Disney)*
