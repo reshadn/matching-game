@@ -41,8 +41,16 @@ var checkMatch = function(){
       checkWin();
       // set as matched cards
       $(".selected").toggleClass("matched cardFace selected");
+      $('.top-right').notify({
+        message: { text: 'Good Job!' },
+        type: 'success'
+      }).show();
     } else if(firstCard !== secondCard){
       // cards don't match
+      $('.top-right').notify({
+        message: { text: 'Sorry, try again!' },
+        type: 'error'
+      }).show();
       //reset selected card view
       $(".selected").animate({
         borderWidth: "3px"
