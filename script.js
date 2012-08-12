@@ -18,23 +18,27 @@ $(".card").click( function () {
   if(firstCard === 0){
     firstCard = $(this).text();
     $(this).toggleClass("selected");
-  } else {
+  } else if(secondCard === 0) {
     secondCard = $(this).text();
     $(this).toggleClass("selected");
   }  
   
 // check if cards match  
   if(firstCard !== 0 && secondCard !== 0){
+   checkMatch(); 
     
-    //cards match
+  } 
+}
+});  
+
+var checkMatch = function(){
+//cards match
     if(firstCard === secondCard){
       //reset cards
       firstCard = 0;
       secondCard = 0;
       matched++;
-      if(matched === 6){
-        $("#modalWin").modal('show');
-      } 
+      checkWin();
       // set as matched cards
       $(".selected").toggleClass("matched cardFace selected");             
     } else if(firstCard !== secondCard){
@@ -50,10 +54,13 @@ $(".card").click( function () {
         $(".selected").toggleClass("cardFace selected");
       });
     }
-  } 
-}
-});  
+};
 
+var checkWin = function(){
+  if(matched === 6){
+    $("#modalWin").modal('show');
+  } 
+};
   //rest all card views and values
   var newGame = function(){
     $(".card").removeClass("cardFace selected matched");
