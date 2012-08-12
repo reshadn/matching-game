@@ -1,6 +1,6 @@
 ## Matching Game 'Lion King'
 
-As a weekend project I built this matching game using jQuery and Bootstrap. Overall it was a simple way to learn new jQuery and jQuery UI features as well as Bootstrap CSS and JS features.
+As a weekend project I built this matching game using jQuery and Bootstrap. Overall it was a simple way to learn new features in jQuery and Twitter Bootstrap.
 
 **Instructions:** Click on the tiles, a match will stay visible, a non-match will fade out and after matching all tiles you will be declared the winner. 
 
