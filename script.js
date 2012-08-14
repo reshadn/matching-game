@@ -7,10 +7,9 @@ var matched = 0;
 $(".card").click( function () {
   // check if card is already matched 
   if($(this).hasClass("matched")){
-  } else if ($(this).hasClass("selected")){
+  } else if($(this).hasClass("selected")){
     //card is already selected
   } else {
-    
   // show selected card
   $(this).toggleClass("cardFace"); 
   
@@ -72,7 +71,7 @@ var checkWin = function(){
     secondCard = 0;
     matched = 0;
   };
-  
+ 
   var hintShowAll = function () {
     $(".card").addClass("cardFace");
     firstCard = 0;
