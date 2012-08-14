@@ -33,17 +33,6 @@ float: left;
 display:none;
 }
 
-.matched {
-border: dotted green;
--webkit-border-radius: 10px;
--moz-border-radius: 10px;
-border-radius: 10px;
-opacity:.9;
-}
-.matched img {
-display:inline;
-}
-
 .cardFace {
 border: dotted red;
 -webkit-border-radius: 10px;
@@ -53,6 +42,18 @@ opacity:1;
 }
 
 .cardFace img{
+display:inline;
+}
+
+.matched {
+border: dotted green;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+opacity:.9;
+}
+
+.matched img {
 display:inline;
 }
 

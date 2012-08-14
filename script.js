@@ -8,29 +8,22 @@ $(".card").click( function () {
   // check if card is already matched 
   if($(this).hasClass("matched")){
   } else if($(this).hasClass("selected")){
-    //card is already selected
+  } else if(secondCard !== 0){
   } else {
-  // show selected card
-  $(this).toggleClass("cardFace"); 
-  
-  //set card value
-  if(firstCard === 0){
+  // show card
+  $(this).toggleClass("cardFace selected"); 
+    //set card value
+    if(firstCard === 0){
     firstCard = $(this).text();
-    $(this).toggleClass("selected");
-  } else if(secondCard === 0) {
-    secondCard = $(this).text();
-    $(this).toggleClass("selected");
-  }  
-  
-// check if cards match  
-  if(firstCard !== 0 && secondCard !== 0){
-    checkMatch(); 
-    //reset card value
-    firstCard = 0;
     secondCard = 0;
-  } 
-}
+    } else if(secondCard === 0) {
+    secondCard = $(this).text();
+    checkMatch(); 
+    }
+  }
 });  
+
+
 
 var checkMatch = function(){
 //cards match
@@ -39,22 +32,27 @@ var checkMatch = function(){
       matched++;
       checkWin();
       // set as matched cards
-      $(".selected").toggleClass("matched cardFace selected");
+      $(".selected").toggleClass("matched cardFace");
+      $(".card").removeClass("selected");
       $('.top-right').notify({
         message: { text: 'Good Job!' },
         type: 'success'
       }).show();
+      firstCard = 0;
+      secondCard = 0;
     } else if(firstCard !== secondCard){
       // cards don't match
       $('.top-right').notify({
         message: { text: 'Sorry, try again!' },
         type: 'error'
       }).show();
-      //reset selected card view
+      //reset card view
       $(".selected").animate({
         borderWidth: "3px"
       }, 2000, function (){
-        $(".selected").toggleClass("cardFace selected");
+        $(".card").removeClass("cardFace selected");
+        firstCard = 0;
+        secondCard = 0;
       });
     }
 };
@@ -66,7 +64,7 @@ var checkWin = function(){
 };
   //rest all card views and values
   var newGame = function(){
-    $(".card").removeClass("cardFace selected matched");
+    $(".card").removeClass("cardFace matched");
     firstCard = 0;
     secondCard = 0;
     matched = 0;
