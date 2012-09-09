@@ -71,16 +71,9 @@ var checkWin = function(){
   };
  
   var hintShowAll = function () {
-    $(".card").addClass("cardFace");
-    firstCard = 0;
-    secondCard = 0;
-    matched = 0;
+    $(".card").addClass("cardFace matched");
   };
   
-//  var easyGame = function(){
-//    $(".card").hide();
-//  }; 
- 
   // New Game handler
   $("#newGame").click(function () {
     newGame();
@@ -91,8 +84,4 @@ var checkWin = function(){
     hintShowAll();
   });
 
-//  $("#easyGame").click(function () {
-//    easyGame();
-//  };
-    
 }); //end doc.ready
