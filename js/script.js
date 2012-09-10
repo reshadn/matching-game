@@ -43,7 +43,7 @@ var checkMatch = function(){
       //reset card view
       $(".selected").animate({
         borderWidth: "3px"
-      }, 2000, function (){
+      }, 3500, function (){
         $(".card").removeClass("cardFace selected");
         firstCard = 0;
         secondCard = 0;
