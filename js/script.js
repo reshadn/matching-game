@@ -34,18 +34,12 @@ var checkMatch = function(){
       // set as matched cards
       $(".selected").toggleClass("matched cardFace");
       $(".card").removeClass("selected");
-      $('.top-right').notify({
-        message: { text: 'Good Job!' },
-        type: 'success'
-      }).show();
+      humane.log("Good Job!", { addnCls: 'humane-bigbox-success'});
       firstCard = 0;
       secondCard = 0;
     } else if(firstCard !== secondCard){
       // cards don't match
-      $('.top-right').notify({
-        message: { text: 'Sorry, try again!' },
-        type: 'error'
-      }).show();
+      humane.log("Sorry, try again!", { addnCls: 'humane-bigbox-error'});
       //reset card view
       $(".selected").animate({
         borderWidth: "3px"
@@ -59,7 +53,7 @@ var checkMatch = function(){
 
 var checkWin = function(){
   if(matched === 6){
-    $("#modalWin").modal('show');
+    humane.log("YOU WIN! You matched all the cards!", {timeout: 4000, addnCls: 'humane-bigbox-success'});
   } 
 };
   //rest all card views and values
